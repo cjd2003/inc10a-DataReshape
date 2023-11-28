@@ -1,0 +1,30 @@
+---
+title: "Nov28_2023_DataReshape"
+output: html_document
+date: "2023-11-28"
+---
+
+Lets putthis up to github!! From finder....
+
+```{r}
+library(tidyverse)
+gdp <- read_delim("../oecd-gdp.csv.bz2")
+library(dplyr)
+gdp %>% 
+  head()
+```
+
+```{r}
+gdpLong <- 
+  gdp %>% 
+  pivot_longer(!c(country,indicator),
+               names_to = "year",
+               values_to = "GDP")
+
+gdpLong %>% 
+  head(10)
+```
+```{r}
+
+```
+
